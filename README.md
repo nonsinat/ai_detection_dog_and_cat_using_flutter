@@ -1,6 +1,6 @@
 # detection_dog_and_cat_using_flutter
 
-A new Flutter project.
+A new Flutter project work with Machine Learning.
 
 ## Getting Started
 
