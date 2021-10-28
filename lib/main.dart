@@ -1,4 +1,4 @@
-import 'package:detection_dog_and_cat_using_flutter/my_home_page.dart';
+
 import 'package:detection_dog_and_cat_using_flutter/splash_screen.dart';
 
 import 'package:flutter/material.dart';

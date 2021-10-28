@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:radial_button/widget/circle_floating_button.dart';
 
 import 'package:tflite/tflite.dart';
@@ -18,9 +19,12 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  // ignore: unused_field
   bool _loading = false;
 
+  // ignore: unused_field
   File? _image;
+  // ignore: unused_field
   List? _output;
 
   final picker = ImagePicker();
@@ -87,6 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
         await imagePicker!.pickImage(source: ImageSource.gallery);
     _file = File(pickedFile!.path);
     setState(() {
+      // ignore: unnecessary_statements
       _file;
       doImageclassifier();
     });
@@ -97,6 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
         await imagePicker!.pickImage(source: ImageSource.camera);
     _file = File(pickedFile!.path);
     setState(() {
+      // ignore: unnecessary_statements
       _file;
       doImageclassifier();
     });
