@@ -19,67 +19,67 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  // ignore: unused_field
-  bool _loading = false;
+  // // ignore: unused_field
+  // bool _loading = false;
 
-  // ignore: unused_field
-  File? _image;
-  // ignore: unused_field
-  List? _output;
+  // // ignore: unused_field
+  // File? _image;
+  // // ignore: unused_field
+  // List? _output;
 
-  final picker = ImagePicker();
+  // final picker = ImagePicker();
 
-  detectImage(PickedFile? image) async {
-    var output = await Tflite.runModelOnImage(
-      path: image!.path,
-      numResults: 2,
-      threshold: 0.6,
-      imageMean: 127.5,
-      imageStd: 127.5,
-    );
+  // detectImage(PickedFile? image) async {
+  //   var output = await Tflite.runModelOnImage(
+  //     path: image!.path,
+  //     numResults: 2,
+  //     threshold: 0.6,
+  //     imageMean: 127.5,
+  //     imageStd: 127.5,
+  //   );
 
-    setState(() {
-      _output = output;
-      _loading = false;
-    });
-  }
+  //   setState(() {
+  //     _output = output;
+  //     _loading = false;
+  //   });
+  // }
 
-  loadMode() async {
-    await Tflite.loadModel(
-      model: "assets/model_unquant.tflite",
-      labels: "assets/labels.txt",
-    );
-  }
+  // loadMode() async {
+  //   await Tflite.loadModel(
+  //     model: "assets/model_unquant.tflite",
+  //     labels: "assets/labels.txt",
+  //   );
+  // }
 
-  @override
-  void dispose() {
-    Tflite.close();
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   Tflite.close();
+  //   super.dispose();
+  // }
 
-  pickImage() async {
-    // ignore: deprecated_member_use
-    var image = await picker.getImage(source: ImageSource.camera);
-    if (image == null) return null;
+  // pickImage() async {
+  //   // ignore: deprecated_member_use
+  //   var image = await picker.getImage(source: ImageSource.camera);
+  //   if (image == null) return null;
 
-    setState(() {
-      _image = File(image.path);
-    });
-    detectImage(image);
-  }
+  //   setState(() {
+  //     _image = File(image.path);
+  //   });
+  //   detectImage(image);
+  // }
 
-  pickGallary() async {
-    // ignore: deprecated_member_use
-    var image = await picker.getImage(source: ImageSource.gallery);
-    if (image == null) {
-      return null;
-    }
+  // pickGallary() async {
+  //   // ignore: deprecated_member_use
+  //   var image = await picker.getImage(source: ImageSource.gallery);
+  //   if (image == null) {
+  //     return null;
+  //   }
 
-    setState(() {
-      _image = File(image.path);
-    });
-    detectImage(image);
-  }
+  //   setState(() {
+  //     _image = File(image.path);
+  //   });
+  //   detectImage(image);
+  // }
 
   Future<File>? imageFile;
   File? _file;
